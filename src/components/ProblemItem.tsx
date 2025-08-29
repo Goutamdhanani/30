@@ -70,21 +70,15 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
                  style={{ background: 'var(--bg-tertiary)', border: '1px solid var(--border-medium)' }}>
               <span className="metadata-small font-medium">#{index}</span>
             </div>
-            <button
-              onClick={handleToggle}
-              className={`transition-all duration-200 ${
-                problem.completed 
-                  ? 'text-emerald-500 hover:text-emerald-400' 
-                  : 'hover:text-white'
-              }`}
-              style={{ color: problem.completed ? 'var(--accent-secondary)' : 'var(--text-secondary)' }}
-            >
-              {problem.completed ? (
-                <CheckCircle2 className="w-6 h-6" />
-              ) : (
-                <Circle className="w-6 h-6" />
-              )}
-            </button>
+            <label className="checkbox-container">
+              <input
+                type="checkbox"
+                className="checkbox-input"
+                checked={problem.completed}
+                onChange={handleToggle}
+              />
+              <div className="checkbox-custom"></div>
+            </label>
           </div>
           
           <div className="flex-1">
@@ -135,7 +129,7 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
         
         <button
           onClick={() => setShowNotes(!showNotes)}
-          className={`p-3 rounded-lg transition-all duration-200 hover:scale-105 ${
+          className={`p-3 rounded-lg transition-all duration-250 hover:scale-105 relative overflow-hidden ${
             problem.notes 
               ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' 
               : 'hover:bg-white/5 hover:border-white/10 border border-transparent'
@@ -158,7 +152,7 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
               onChange={(e) => setTimeSpent(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleTimeSubmit()}
               placeholder="30"
-              className="flex-1 p-md rounded-lg border text-white placeholder-gray-400 transition-all duration-200 focus:scale-105"
+              className="flex-1 p-md rounded-lg border text-white placeholder-gray-400 transition-all duration-250 focus:scale-105 focus:border-purple-400"
               style={{ 
                 background: 'var(--bg-tertiary)', 
                 borderColor: 'var(--border-medium)',
@@ -166,10 +160,10 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
               }}
               autoFocus
             />
-            <button onClick={handleTimeSubmit} className="btn btn-success">
+            <button onClick={handleTimeSubmit} className="btn btn-success animate-fade-in">
               Complete
             </button>
-            <button onClick={() => setShowTimeInput(false)} className="btn btn-secondary">
+            <button onClick={() => setShowTimeInput(false)} className="btn btn-secondary animate-fade-in">
               Cancel
             </button>
           </div>
@@ -185,7 +179,7 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Add your thoughts, approach, or key insights..."
-            className="w-full p-md rounded-lg border text-white placeholder-gray-400 mb-md transition-all duration-200 focus:scale-105"
+            className="w-full p-md rounded-lg border text-white placeholder-gray-400 mb-md transition-all duration-250 focus:scale-105 focus:border-purple-400"
             style={{ 
               background: 'var(--bg-tertiary)', 
               borderColor: 'var(--border-medium)',
@@ -195,10 +189,10 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
             rows={4}
           />
           <div className="flex gap-md">
-            <button onClick={handleNotesSubmit} className="btn btn-primary">
+            <button onClick={handleNotesSubmit} className="btn btn-primary animate-fade-in">
               Save
             </button>
-            <button onClick={() => setShowNotes(false)} className="btn btn-secondary">
+            <button onClick={() => setShowNotes(false)} className="btn btn-secondary animate-fade-in">
               Cancel
             </button>
           </div>

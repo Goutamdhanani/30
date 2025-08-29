@@ -35,10 +35,10 @@ function App() {
       <div className="max-w-7xl mx-auto p-xl">
         {/* Navigation Tabs */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-3xl">
-          <div className="flex card p-sm mb-lg lg:mb-0">
+          <div className="flex card p-sm mb-lg lg:mb-0 animate-fade-in">
             <button
               onClick={() => setActiveTab('topics')}
-              className={`flex items-center px-lg py-md rounded-lg transition-all duration-200 font-medium ${
+              className={`flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium relative overflow-hidden ${
                 activeTab === 'topics'
                   ? 'btn-primary'
                   : 'btn-secondary'
@@ -49,7 +49,7 @@ function App() {
             </button>
             <button
               onClick={() => setActiveTab('achievements')}
-              className={`flex items-center px-lg py-md rounded-lg transition-all duration-200 font-medium relative ${
+              className={`flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium relative overflow-hidden ${
                 activeTab === 'achievements'
                   ? 'btn-primary'
                   : 'btn-secondary'
@@ -58,7 +58,7 @@ function App() {
               <Award className="w-4 h-4 mr-sm" />
               <span>Achievements</span>
               {unlockedAchievements.length > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 text-xs font-bold rounded-full flex items-center justify-center text-white"
+                <span className="absolute -top-1 -right-1 w-5 h-5 text-xs font-bold rounded-full flex items-center justify-center text-white animate-pulse-success"
                       style={{ background: 'var(--accent-secondary)' }}>
                   {unlockedAchievements.length}
                 </span>
@@ -66,7 +66,7 @@ function App() {
             </button>
             <button
               onClick={() => setActiveTab('stats')}
-              className={`flex items-center px-lg py-md rounded-lg transition-all duration-200 font-medium ${
+              className={`flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium relative overflow-hidden ${
                 activeTab === 'stats'
                   ? 'btn-primary'
                   : 'btn-secondary'
@@ -79,7 +79,7 @@ function App() {
           
           <button
             onClick={() => setShowResetModal(true)}
-            className="flex items-center px-lg py-md rounded-lg transition-all duration-200 font-medium border"
+            className="flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium border relative overflow-hidden"
             style={{ 
               background: 'rgba(239, 68, 68, 0.1)', 
               borderColor: 'rgba(239, 68, 68, 0.2)',
@@ -145,9 +145,9 @@ function App() {
 
       {/* Reset Confirmation Modal */}
       {showResetModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 p-lg"
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-lg animate-fade-in"
              style={{ background: 'rgba(0, 0, 0, 0.8)' }}>
-          <div className="card p-3xl max-w-md w-full">
+          <div className="card p-3xl max-w-md w-full animate-slide-down">
             <h3 className="subheading mb-lg">Reset Progress</h3>
             <p className="body-text mb-2xl" style={{ color: 'var(--text-secondary)' }}>
               Are you sure you want to reset all your progress? This action cannot be undone.
@@ -155,7 +155,7 @@ function App() {
             <div className="flex gap-md">
               <button
                 onClick={handleReset}
-                className="flex-1 px-lg py-md rounded-lg font-medium border transition-all duration-200"
+                className="flex-1 px-lg py-md rounded-lg font-medium border transition-all duration-250 relative overflow-hidden"
                 style={{ 
                   background: 'rgba(239, 68, 68, 0.1)', 
                   borderColor: 'rgba(239, 68, 68, 0.2)',
