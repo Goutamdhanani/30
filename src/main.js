@@ -1,4 +1,4 @@
-import './style.css'
+import './index.css'
 import { createButtonGallery } from './components/ButtonGallery.js'
 import { createTabSystem } from './components/TabSystem.js'
 import { createAnimatedCards } from './components/AnimatedCards.js'
