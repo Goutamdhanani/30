@@ -94,7 +94,7 @@ export const TopicCard: React.FC<TopicCardProps> = ({
       >
         <div className="flex items-center justify-between mb-2xl">
           <div className="flex items-center">
-            <div className={`w-16 h-16 bg-gradient-to-br ${getIconColor(topic.color)} rounded-2xl flex items-center justify-center mr-lg transition-transform duration-300 hover:scale-110`}>
+            <div className={`w-16 h-16 bg-gradient-to-br ${getIconColor(topic.color)} rounded-2xl flex items-center justify-center mr-lg transition-all duration-300 hover:scale-110 animate-glow`}>
               {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
             </div>
             <div>
@@ -119,7 +119,7 @@ export const TopicCard: React.FC<TopicCardProps> = ({
             </div>
             <div className="transition-transform duration-300" style={{ 
               color: 'var(--text-secondary)',
-              transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)'
+              transform: isExpanded ? 'rotate(180deg) scale(1.1)' : 'rotate(0deg) scale(1)'
             }}>
               <ChevronDown className="w-5 h-5" />
             </div>

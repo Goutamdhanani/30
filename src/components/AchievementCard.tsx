@@ -31,15 +31,15 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement })
   const IconComponent = iconMap[achievement.icon as keyof typeof iconMap];
 
   return (
-    <div className={`card p-2xl transition-all duration-300 ${
+    <div className={`card p-2xl transition-all duration-300 hover:scale-105 ${
       achievement.unlocked 
-        ? 'selected' 
-        : 'opacity-60 hover:opacity-80'
+        ? 'selected animate-glow' 
+        : 'opacity-70 hover:opacity-90'
     }`}>
       <div className="flex items-center">
-        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mr-lg transition-all duration-300 ${
+        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mr-lg transition-all duration-300 hover:scale-110 ${
           achievement.unlocked 
-            ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white' 
+            ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white animate-float' 
             : 'text-gray-400'
         }`}
         style={{ background: achievement.unlocked ? undefined : 'var(--bg-tertiary)' }}>

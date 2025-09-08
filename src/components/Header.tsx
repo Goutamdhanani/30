@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ userStats }) => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-3xl">
             <div className="mb-2xl lg:mb-0">
               <div className="flex items-center mb-lg">
-                <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-purple-700 rounded-2xl flex items-center justify-center mr-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-purple-700 rounded-2xl flex items-center justify-center mr-lg animate-float">
                   <Zap className="w-7 h-7 text-white" />
                 </div>
                 <div>

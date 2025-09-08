@@ -129,12 +129,11 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
         
         <button
           onClick={() => setShowNotes(!showNotes)}
-          className={`p-3 rounded-lg transition-all duration-250 hover:scale-105 relative overflow-hidden ${
+          className={`btn btn-icon p-3 rounded-lg relative overflow-hidden ${
             problem.notes 
-              ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' 
-              : 'hover:bg-white/5 hover:border-white/10 border border-transparent'
+              ? 'btn-primary' 
+              : 'btn-secondary'
           }`}
-          style={{ color: problem.notes ? 'var(--accent-primary)' : 'var(--text-secondary)' }}
         >
           <MessageSquare className="w-4 h-4" />
         </button>
@@ -152,12 +151,7 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
               onChange={(e) => setTimeSpent(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleTimeSubmit()}
               placeholder="30"
-              className="flex-1 p-md rounded-lg border text-white placeholder-gray-400 transition-all duration-250 focus:scale-105 focus:border-purple-400"
-              style={{ 
-                background: 'var(--bg-tertiary)', 
-                borderColor: 'var(--border-medium)',
-                fontSize: '15px'
-              }}
+              className="flex-1"
               autoFocus
             />
             <button onClick={handleTimeSubmit} className="btn btn-success animate-fade-in">
@@ -179,13 +173,7 @@ export const ProblemItem: React.FC<ProblemItemProps> = ({
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Add your thoughts, approach, or key insights..."
-            className="w-full p-md rounded-lg border text-white placeholder-gray-400 mb-md transition-all duration-250 focus:scale-105 focus:border-purple-400"
-            style={{ 
-              background: 'var(--bg-tertiary)', 
-              borderColor: 'var(--border-medium)',
-              fontSize: '15px',
-              minHeight: '100px'
-            }}
+            className="w-full mb-md"
             rows={4}
           />
           <div className="flex gap-md">

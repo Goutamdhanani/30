@@ -34,14 +34,14 @@ function App() {
       
       <div className="max-w-7xl mx-auto p-xl">
         {/* Navigation Tabs */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-3xl">
-          <div className="flex card p-sm mb-lg lg:mb-0 animate-fade-in">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-3xl animate-fade-in">
+          <div className="flex card p-md mb-lg lg:mb-0 gap-sm">
             <button
               onClick={() => setActiveTab('topics')}
-              className={`flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium relative overflow-hidden ${
+              className={`tab-button flex items-center px-lg py-md rounded-lg font-medium relative overflow-hidden ${
                 activeTab === 'topics'
-                  ? 'btn-primary'
-                  : 'btn-secondary'
+                  ? 'active'
+                  : ''
               }`}
             >
               <BookOpen className="w-4 h-4 mr-sm" />
@@ -49,10 +49,10 @@ function App() {
             </button>
             <button
               onClick={() => setActiveTab('achievements')}
-              className={`flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium relative overflow-hidden ${
+              className={`tab-button flex items-center px-lg py-md rounded-lg font-medium relative overflow-hidden ${
                 activeTab === 'achievements'
-                  ? 'btn-primary'
-                  : 'btn-secondary'
+                  ? 'active'
+                  : ''
               }`}
             >
               <Award className="w-4 h-4 mr-sm" />
@@ -66,10 +66,10 @@ function App() {
             </button>
             <button
               onClick={() => setActiveTab('stats')}
-              className={`flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium relative overflow-hidden ${
+              className={`tab-button flex items-center px-lg py-md rounded-lg font-medium relative overflow-hidden ${
                 activeTab === 'stats'
-                  ? 'btn-primary'
-                  : 'btn-secondary'
+                  ? 'active'
+                  : ''
               }`}
             >
               <BarChart3 className="w-4 h-4 mr-sm" />
@@ -79,7 +79,7 @@ function App() {
           
           <button
             onClick={() => setShowResetModal(true)}
-            className="flex items-center px-lg py-md rounded-lg transition-all duration-250 font-medium border relative overflow-hidden"
+            className="btn flex items-center px-lg py-md rounded-lg font-medium border relative overflow-hidden"
             style={{ 
               background: 'rgba(239, 68, 68, 0.1)', 
               borderColor: 'rgba(239, 68, 68, 0.2)',
