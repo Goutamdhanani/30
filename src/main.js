@@ -1,1 +1,0 @@
-// This file is no longer needed - we're using main.tsx
